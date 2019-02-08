@@ -6,6 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
     && apt-get install -y --install-recommends \
     build-essential \
+    g++ make automake libtool \
     git \
     tar \
     vim
