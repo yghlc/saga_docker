@@ -6,17 +6,20 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
     && apt-get install -y --install-recommends \
     build-essential \
-    cmake \
     git \
-    tar
-
-RUN apt-get install -y --install-recommends\
-    libwxgtk3.0-dev \
+    tar \
     vim
 
+# needed dependencies
+RUN apt-get install -y --install-recommends\
+    libwxgtk3.0-dev libtiff5-dev libgdal-dev libproj-dev \
+    libexpat-dev wx-common libogdi3.2-dev unixodbc-dev
+    
+# optial need   
+
 #install default gdal on ubuntu 16.04 (default version is 1.11)
-RUN apt-get install -y --install-recommends gdal-bin libgdal-dev \
-    proj-bin  libproj-dev
+# RUN apt-get install -y --install-recommends gdal-bin libgdal-dev \
+#     proj-bin  libproj-dev
 
 RUN mkdir /home/root
 ENV HOME /home/root
