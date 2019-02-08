@@ -34,7 +34,7 @@ WORKDIR $HOME
 COPY saga-7.1.1.tar.gz /home/root/saga-7.1.1.tar.gz
 
 RUN tar zxvf saga-7.1.1.tar.gz 
-RUN cd saga-7.1.1 && ./configure  && make -j 8 && make install
+RUN cd saga-7.1.1 && autoreconf -fi && ./configure  && make -j 8 && make install
 
 # Clean-up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
