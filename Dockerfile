@@ -23,8 +23,7 @@ RUN apt-get install -y --install-recommends \
     libsvm-dev    
 
 #install default gdal on ubuntu 16.04 (default version is 1.11)
-# RUN apt-get install -y --install-recommends gdal-bin libgdal-dev \
-#     proj-bin  libproj-dev
+RUN apt-get install -y --install-recommends gdal-bin
 
 RUN mkdir /home/root
 ENV HOME /home/root
