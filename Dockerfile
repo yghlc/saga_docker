@@ -15,7 +15,12 @@ RUN apt-get install -y --install-recommends\
     libwxgtk3.0-dev libtiff5-dev libgdal-dev libproj-dev \
     libexpat-dev wx-common libogdi3.2-dev unixodbc-dev
     
-# optial need   
+# optial needed dependencies (more on https://sourceforge.net/p/saga-gis/wiki/Compiling%20SAGA%20on%20Linux/)
+RUN apt-get install -y --install-recommends \
+    libqhull-dev \
+    libhpdf-dev \
+    libopencv-dev \
+    libsvm-dev    
 
 #install default gdal on ubuntu 16.04 (default version is 1.11)
 # RUN apt-get install -y --install-recommends gdal-bin libgdal-dev \
